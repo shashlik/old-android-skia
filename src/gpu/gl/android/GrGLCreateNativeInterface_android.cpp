@@ -12,10 +12,14 @@
 #define GL_GLEXT_PROTOTYPES
 #endif
 
-#include <GLES2/gl2.h>
-#include <GLES2/gl2ext.h>
+// #include <GLES2/gl2.h>
+// #include <GLES2/gl2ext.h>
+#include <epoxy/gl.h>
 
 #include <EGL/egl.h>
+
+extern EGLAPI void (*epoxy_glDiscardFramebufferEXT)(GLenum target, GLsizei numAttachments, const GLenum * attachments);
+#define glDiscardFramebufferEXT epoxy_glDiscardFramebufferEXT
 
 static const GrGLInterface* create_es_interface(GrGLVersion version,
                                                 const GrGLExtensions& extensions) {
