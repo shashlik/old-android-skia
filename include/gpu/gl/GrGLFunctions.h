@@ -35,8 +35,8 @@ typedef float GrGLclampf;
 typedef double GrGLdouble;
 typedef double GrGLclampd;
 typedef void GrGLvoid;
-typedef long GrGLintptr;
-typedef long GrGLsizeiptr;
+typedef int GrGLintptr;
+typedef int GrGLsizeiptr;
 
 ///////////////////////////////////////////////////////////////////////////////
 
