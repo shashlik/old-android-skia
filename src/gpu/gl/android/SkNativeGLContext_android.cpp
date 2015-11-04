@@ -6,7 +6,7 @@
  * found in the LICENSE file.
  */
 #include "gl/SkNativeGLContext.h"
-
+#include <stdio.h>
 SkNativeGLContext::AutoContextRestore::AutoContextRestore() {
     fOldEGLContext = eglGetCurrentContext();
     fOldDisplay = eglGetCurrentDisplay();
@@ -52,6 +52,7 @@ void SkNativeGLContext::destroyGLContext() {
 }
 
 const GrGLInterface* SkNativeGLContext::createGLContext() {
+    printf("SkNativeGLContext::createGLContext\n");
     static const EGLint kEGLContextAttribsForOpenGL[] = {
         EGL_NONE
     };
